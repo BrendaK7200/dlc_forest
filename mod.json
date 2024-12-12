@@ -1,0 +1,44 @@
+{
+    // The ID of your mod. Should be unique!!
+    "id": "dlc_forest",
+    // Displays on the main menu.
+    "name": "Nightshade Forest",
+    // Displays underneath the name. Optional.
+    "subtitle": "Deep within Hometown's forest, a dark secret lurks. One that may threaten the very balance of light and dark itself. Will our heroes stop whatever's at the end of these woods? Or will the madness of the forest consume them?",
+
+    // The version of your mod.
+    "version": "v0.0.1",
+    // What version of the engine your mod was made with.
+    "engineVer": "v0.9.0-dev",
+
+    // The Deltarune chapter you'd like to base your mod off of.
+    // Do keep in mind that you can control chapter-specific features
+    // one by one using the config below.
+    "chapter": 2,
+
+    // The map that you start in when first starting the mod.
+    // May be overwritten by the Game:swapIntoMod invocation
+    "map": "entrance",
+
+
+    // Whether the mod is hidden from the mod selection.
+    "hidden": false,
+
+    // Whether the game window's title should be set to the mod's name, and the icon to the image
+    // in the file `window_icon.png`.
+    // When your mod is configured as the engine's target mod, it's automatically done unless if
+    // this option is explicitly set to false; else, it's done if this is set to true.
+    "setWindowTitleAndIcon": null,
+
+    // Config values for the engine and any libraries you may have.
+    // These config values can control chapter-specific features as well.
+    "config": {
+        "kristal": {
+            // End of config
+        }
+    },
+    // todo: agree on how this should work
+    "dlc": {
+        
+    }
+}
