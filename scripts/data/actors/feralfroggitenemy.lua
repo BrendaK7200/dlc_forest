@@ -50,14 +50,10 @@ function actor:init()
         ["create_sprite"] = function()
             local sprite = Sprite(self.path.."/body", 21, 50)
             sprite:setOrigin(0.5, 1)
-            --sprite.layer = 400
+            --sprite.layer = 300
             return sprite
         end
     })
-end
-
-function actor:update()
-    super.update(self)
 end
 
 return actor

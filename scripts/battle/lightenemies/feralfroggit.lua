@@ -43,6 +43,10 @@ function FeralFroggit:init()
 
     self.damage_offset = {0, -60}
 
+    local body = self.sprite.parts.body.sprite
+    local head = self.sprite.parts.head.sprite
+    head.layer = body.layer + 1
+
     self.timer = 0
 end
 
