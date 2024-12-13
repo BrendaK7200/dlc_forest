@@ -74,13 +74,18 @@ the leaves.)</property>
     <property name="text2" value="* (You are filled with the power of a mysterious new adventure.)"/>
    </properties>
   </object>
-  <object id="8" name="transition" x="320" y="40" width="40" height="40"/>
+  <object id="8" name="transition" x="320" y="-40" width="40" height="40">
+   <properties>
+    <property name="map" value="pre_evershade"/>
+    <property name="marker" value="south"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup id="7" name="markers">
   <object id="9" name="spawn" x="840" y="600">
    <point/>
   </object>
-  <object id="10" name="entry" x="340" y="120">
+  <object id="10" name="entry" x="340" y="40">
    <point/>
   </object>
  </objectgroup>

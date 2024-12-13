@@ -21,8 +21,7 @@ return {
     {
       name = "hometown_forest",
       firstgid = 1,
-      filename = "../../tilesets/hometown_forest.tsx",
-      exportfilename = "../../tilesets/hometown_forest.lua"
+      filename = "../../tilesets/hometown_forest.tsx"
     }
   },
   layers = {
@@ -236,12 +235,15 @@ return {
           type = "",
           shape = "rectangle",
           x = 320,
-          y = 40,
+          y = -40,
           width = 40,
           height = 40,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["map"] = "pre_evershade",
+            ["marker"] = "south"
+          }
         }
       }
     },
@@ -278,7 +280,7 @@ return {
           type = "",
           shape = "point",
           x = 340,
-          y = 120,
+          y = 40,
           width = 0,
           height = 0,
           rotation = 0,
