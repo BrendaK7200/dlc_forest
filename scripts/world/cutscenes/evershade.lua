@@ -63,6 +63,10 @@ return {
         froggit:setAnimation("croak")
         Assets.playSound("croak", 1, 0.7)
         cutscene:wait(1)
+        if jamm and not Game:getFlag("dungeonkiller") then
+            cutscene:showNametag("Jamm")
+            cutscene:text("* Uh...[wait:10]\n* Brenda?", "worried", "jamm")
+        end
         cutscene:showNametag("Brenda")
         cutscene:text("* H-hey,[wait:5] w-what the hell are you doing?!", "shocked", "brenda_lw")
         cutscene:text("* S-stay back!", "shocked_b", "brenda_lw")
@@ -93,8 +97,8 @@ return {
             cutscene:text("* I dunno why they didn't try to run away though...", "annoyed_down", "susie")
             if jamm and not Game:getFlag("dungeonkiller") then
                 cutscene:showNametag("Jamm")
-                cutscene:text("* Yeah, not that I'm proud of killing or anything...", "worried", "jamm")
-                cutscene:text("* But what matters is that we're safe, right?", "worried", "jamm")
+                cutscene:text("* Yeah,[wait:5] not that I'm proud of killing or anything...", "worried", "jamm")
+                cutscene:text("* But what matters is that we're safe,[wait:5] right?", "worried", "jamm")
             end
             cutscene:showNametag("Brenda")
             cutscene:text("* [speed:0.4]...", "down", "brenda_lw")
@@ -124,7 +128,7 @@ return {
             cutscene:text("* No problem!", "smile", "susie")
             if jamm and not Game:getFlag("dungeonkiller") then
                 cutscene:showNametag("Jamm")
-                cutscene:text("* Yeah, that was a piece of cake!", "smile", "jamm")
+                cutscene:text("* Yeah,[wait:5] that was a piece of cake!", "smug", "jamm")
                 cutscene:showNametag("Susie")
             end
             cutscene:text("* Geez,[wait:5] monsters aren't usually agressive like that.", "nervous", "susie")
@@ -136,7 +140,7 @@ return {
             cutscene:text("* Just in case more of those guys try to attack us.", "nervous_side", "susie")
             if jamm and not Game:getFlag("dungeonkiller") then
                 cutscene:showNametag("Jamm")
-                cutscene:text("* Couldn't agree more. We can't be too careful.", "worried", "jamm")
+                cutscene:text("* Couldn't agree more.[wait:10] We can't be too careful.", "worried", "jamm")
             end
             cutscene:showNametag("Brenda")
             cutscene:text("* Got it.", "neutral", "brenda_lw")
