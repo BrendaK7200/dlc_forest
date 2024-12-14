@@ -4,8 +4,14 @@ return {
         local brenda = cutscene:getCharacter("brenda_lw")
         local susie = cutscene:getCharacter("susie_lw")
         local leader = cutscene:getCharacter(Game.world.player.actor.id)
-        local follower1 = cutscene:getCharacter(Game.party[2].actor.id)
-        local follower2 = cutscene:getCharacter(Game.party[3].actor.id)
+        local follower1 = nil
+        local follower2 = nil
+        if #Game.party >= 2 then
+            follower1 = cutscene:getCharacter(Game.party[2].actor.id)
+            if #Game.party == 3 then
+                follower2 = cutscene:getCharacter(Game.party[3].actor.id)
+            end
+        end
         local froggit = cutscene:getCharacter("feralfroggit")
         cutscene:detachCamera()
         cutscene:detachFollowers()
@@ -34,9 +40,15 @@ return {
         cutscene:hideNametag()
         cutscene:walkTo(brenda, 340, 460, 0.75, "up")
         cutscene:walkTo(leader, 300, 520, 0.5, "right", "right")
+        if #Game.party == 2 then
+            cutscene:walkTo(follower1, 380, 560, 0.3, "left", "left")
+        end
         susie:alert()
         cutscene:wait(1)
         cutscene:walkTo(leader, 340, 520, 0.5, "up")
+        if #Game.party == 2 then
+            cutscene:walkTo(follower1, 340, 560, 0.3, "up")
+        end
         cutscene:showNametag("Susie")
         cutscene:text("* H-hey![wait:5] Wait![wait:5] Brenda![wait:10]\n* That Froggit looks kinda-", "surprise_frown", "susie")
         cutscene:showNametag("Brenda")
