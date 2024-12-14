@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 8,
-  nextobjectid = 15,
+  nextobjectid = 17,
   properties = {
     ["border"] = "leaves",
     ["light"] = true,
@@ -243,7 +243,42 @@ return {
           height = 40,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["map"] = "evershade_01",
+            ["marker"] = "south"
+          }
+        },
+        {
+          id = 15,
+          name = "script",
+          type = "",
+          shape = "rectangle",
+          x = 80,
+          y = 600,
+          width = 520,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["cutscene"] = "evershade.froggit",
+            ["once"] = true
+          }
+        },
+        {
+          id = 16,
+          name = "npc",
+          type = "",
+          shape = "point",
+          x = 340,
+          y = 360,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["actor"] = "feralfroggit",
+            ["flagcheck"] = "!evershade_froggit"
+          }
         }
       }
     },

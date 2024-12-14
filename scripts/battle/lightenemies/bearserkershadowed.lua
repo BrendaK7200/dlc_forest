@@ -17,6 +17,7 @@ function BearserkerShadowed:init()
     self.dialogue_offset = {10, 0}
 
     self.waves = {
+        "basic"
     }
 
     self.check = "ATK ??? DEF ???\n* There's no hope of defeating it.\n* Run as soon as you can."

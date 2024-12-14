@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="17" height="22" tilewidth="40" tileheight="40" infinite="0" nextlayerid="8" nextobjectid="15">
+<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="17" height="22" tilewidth="40" tileheight="40" infinite="0" nextlayerid="8" nextobjectid="17">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -76,7 +76,25 @@
     <property name="marker" value="entry"/>
    </properties>
   </object>
-  <object id="9" name="transition" x="200" y="-40" width="280" height="40"/>
+  <object id="9" name="transition" x="200" y="-40" width="280" height="40">
+   <properties>
+    <property name="map" value="evershade_01"/>
+    <property name="marker" value="south"/>
+   </properties>
+  </object>
+  <object id="15" name="script" x="80" y="600" width="520" height="40">
+   <properties>
+    <property name="cutscene" value="evershade.froggit"/>
+    <property name="once" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="16" name="npc" x="340" y="360">
+   <properties>
+    <property name="actor" value="feralfroggit"/>
+    <property name="flagcheck" value="!evershade_froggit"/>
+   </properties>
+   <point/>
+  </object>
  </objectgroup>
  <objectgroup id="7" name="markers">
   <object id="10" name="spawn" x="340" y="760">

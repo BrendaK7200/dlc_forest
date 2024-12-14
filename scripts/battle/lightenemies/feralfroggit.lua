@@ -17,6 +17,7 @@ function FeralFroggit:init()
     self.dialogue_offset = {10, 0}
 
     self.waves = {
+        "flyhalo"
     }
 
     self.dialogue = {
@@ -52,6 +53,13 @@ end
 
 function FeralFroggit:getDamageVoice()
     return "ehurt1"
+end
+
+function FeralFroggit:onHurtEnd()
+    super:onHurtEnd(self)
+    local body = self.sprite.parts.body.sprite
+    local head = self.sprite.parts.head.sprite
+    head.layer = body.layer + 1
 end
 
 function FeralFroggit:onAct(battler, name)
