@@ -5,8 +5,8 @@ function actor:init()
 
     self.name = "Feral Froggit"
 
-    self.width = 43
-    self.height = 50
+    self.width = 67
+    self.height = 81
 
     self.use_light_battler_sprite = true
 
@@ -38,7 +38,7 @@ function actor:init()
 
     self:addLightBattlerPart("head", {
         ["create_sprite"] = function()
-            local sprite = Sprite(self.path.."/head", 21, 26)
+            local sprite = Sprite(self.path.."/head", 33, 26)
             sprite:setOrigin(0.5, 1)
             --sprite.layer = 400
             sprite:play(2)
@@ -48,7 +48,7 @@ function actor:init()
 
     self:addLightBattlerPart("body", {
         ["create_sprite"] = function()
-            local sprite = Sprite(self.path.."/body", 21, 50)
+            local sprite = Sprite(self.path.."/body", 33, 80)
             sprite:setOrigin(0.5, 1)
             --sprite.layer = 300
             return sprite

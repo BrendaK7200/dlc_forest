@@ -67,6 +67,8 @@ return {
             cutscene:showNametag("Jamm")
             cutscene:text("* Uh...[wait:10]\n* Brenda?", "worried", "jamm")
         end
+        Assets.playSound("wing", 1, 1)
+        cutscene:wait(cutscene:slideTo(froggit, froggit.x, froggit.y + 60, 1, "out-cubic"))
         cutscene:showNametag("Brenda")
         cutscene:text("* H-hey,[wait:5] w-what the hell are you doing?!", "shocked", "brenda_lw")
         cutscene:text("* S-stay back!", "shocked_b", "brenda_lw")

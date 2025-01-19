@@ -17,7 +17,8 @@ function FeralFroggit:init()
     self.dialogue_offset = {10, 0}
 
     self.waves = {
-        "flyhalo"
+        "flyhalo",
+        "ffroggiteye"
     }
 
     self.dialogue = {
@@ -102,7 +103,7 @@ function FeralFroggit:update()
     local head = self.sprite.parts.head.sprite
     self.timer = self.timer + DT
     body.scale_y = math.sin(self.timer*3)/10 + 1
-    head.y = -math.sin(self.timer*3)*3 + 30
+    head.y = -math.sin(self.timer*3)*3 + 40
 end
 
 return FeralFroggit

@@ -13,7 +13,7 @@ function Basic:init()
 end
 
 function Basic:onStart()
-    local totalbullets = (24/#Game.battle:getActiveEnemies()) * #self:getAttackers()
+    local totalbullets = (18/#Game.battle:getActiveEnemies()) * #self:getAttackers()
     for i = 1, totalbullets, 1 do
         local bullet = self:spawnBullet("flycircle", Game.battle.arena.left, Game.battle.arena.top, math.rad(180), 0)
         bullet.index = i
