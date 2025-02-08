@@ -21,8 +21,7 @@
     },
 
     "sharedlibs": [
-        "mg2party",
-        "magical-glass-2"
+        "magical-glass"
     ],
 
     "config": {
