@@ -42,6 +42,7 @@ function FeralFroggit:init()
     self:registerAct("Flirt")
     self:registerAct("Threaten")
     self:registerAct("X-Threaten", nil, "susie")
+    self:registerMarcyAct("Jump")
 
     self.damage_offset = {0, -60}
 
@@ -87,6 +88,18 @@ function FeralFroggit:onAct(battler, name)
         return {
             "* You and Susie waived your weapons at Feral Froggit.",
             "* Feral Froggit now acknowledges you as its superior."
+        }
+    elseif name == "Jump" then
+		local froggits = 0
+        for k,v in ipairs(Game.battle.enemies) do
+			if v.id == "feralfroggit" then
+				froggits = froggits + 1
+				v:setTired(true)
+			end
+		end
+        return {
+            "* Marcy climbed off of Jamm's back and started hopping around...",
+            "* The Feral Froggit" .. ((froggits > 1) and "s" or "") .. " couldn't keep up!\n* They became [color:blue]TIRED[color:white]!"
         }
     elseif name == "Standard" then
         -- Placeholder
