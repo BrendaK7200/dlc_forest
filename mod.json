@@ -20,6 +20,11 @@
 
     },
 
+    "sharedlibs": [
+        "mg2party",
+        "magical-glass-2"
+    ],
+
     "config": {
         "kristal": {
             // End of config
