@@ -102,7 +102,35 @@ function FeralFroggit:onAct(battler, name)
             "* The Feral Froggit" .. ((froggits > 1) and "s" or "") .. " couldn't keep up!\n* They became [color:blue]TIRED[color:white]!"
         }
     elseif name == "Standard" then
-        -- Placeholder
+        if battler.chara.id == "susie" then
+            self:addMercy(50)
+            return {
+                "* Susie threatens the Feral Froggit.",
+                "* Feral Froggit recognized her attempt at dominance."
+            }
+        elseif battler.chara.id == "noelle" then
+            self.tired = true
+            self.dialogue_override = "*Bored\n Croak*"
+            return {
+                "* Noelle tried to calm down the Feral Froggit.",
+                "* Feral Froggit got bored and became [color:blue]TIRED[color:reset]."
+            }
+        elseif battler.chara.id == "ceroba" then
+            if not self.ceroba_acted then
+                self.attack = self.attack - 1
+                self.defense = self.defense - 1
+                self.ceroba_acted = true
+                return {
+                    "* Ceroba summons some flowers that circle around the Feral Froggit.",
+                    "* Feral Froggit felt dizzy![wait:10]\n* Their ATTACK and DEFENSE dropped!"
+                }
+            else
+                return {
+                    "* Ceroba summons more flowers that circle around the Feral Froggit.",
+                    "* Feral Froggit is already dizzy.[wait:10]\n* Nothing happened."
+                }
+            end
+        end
         return "* ... But "..battler.chara:getName().." had no idea what to do."
     end
 
