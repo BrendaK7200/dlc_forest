@@ -2,7 +2,7 @@ return {
     ---@param cutscene WorldCutscene
     froggit = function(cutscene, event)
         local brenda = cutscene:getCharacter("brenda_lw")
-        local leader = cutscene:getCharacter(Game.world.player.actor.id)
+        local leader = Game.world.player
         local froggit = cutscene:getCharacter("feralfroggit")
         cutscene:detachCamera()
         cutscene:detachFollowers()
@@ -96,12 +96,13 @@ return {
         else
             local susie = cutscene:getCharacter("susie_lw")
             local jamm = cutscene:getCharacter("jamm_lw") or cutscene:getCharacter("jammarcy_light")
-            local follower1 = nil
-            local follower2 = nil
+            local ceroba = cutscene:getCharacter("ceroba")
+            local follower1
+            local follower2
             if #Game.party >= 2 then
-                follower1 = cutscene:getCharacter(Game.party[2].actor.id)
+                follower1 = cutscene:getCharacter(Game.party[2].id)
                 if #Game.party == 3 then
-                    follower2 = cutscene:getCharacter(Game.party[3].actor.id)
+                    follower2 = cutscene:getCharacter(Game.party[3].id)
                 end
             end
             if #Game.party >= 2 then
@@ -119,7 +120,11 @@ return {
             brenda:alert()
             cutscene:wait(0.5)
             cutscene:showNametag("Brenda")
-            cutscene:text("* Hey,[wait:5] is that a Froggit over there?", "shocked_b", "brenda_lw")
+            if ceroba then
+                cutscene:text("* Hey,[wait:5] is that a Froggit over there?[react:1]", "shocked_b", "brenda_lw", {reactions={{"What are they doing all\nthe way out here?", "mid", "bottom", "question", "ceroba"}}})
+            else
+                cutscene:text("* Hey,[wait:5] is that a Froggit over there?", "shocked_b", "brenda_lw")
+            end
             cutscene:showNametag("Susie")
             cutscene:text("* Looks like it,[wait:5] but-", "neutral_side", "susie")
             cutscene:showNametag("Brenda")
@@ -130,14 +135,23 @@ return {
             if #Game.party == 2 then
                 cutscene:walkTo(follower1, 380, 560, 0.3, "left", "left")
             end
-            susie:alert()
+            if ceroba then
+                ceroba:alert()
+            else
+                susie:alert()
+            end
             cutscene:wait(1)
             cutscene:walkTo(leader, 340, 520, 0.5, "up")
             if #Game.party == 2 then
                 cutscene:walkTo(follower1, 340, 560, 0.3, "up")
             end
-            cutscene:showNametag("Susie")
-            cutscene:text("* H-hey![wait:5] Wait![wait:5] Brenda![wait:10]\n* That Froggit looks kinda-", "surprise_frown", "susie")
+            if ceroba then
+                cutscene:showNametag("Ceroba")
+                cutscene:text("* H-[wait:5]hey![wait:5] Wait![wait:5] That doesn't look like a normal-", "confounded", "ceroba")
+            else
+                cutscene:showNametag("Susie")
+                cutscene:text("* H-hey![wait:5] Wait![wait:5] Brenda![wait:10]\n* That Froggit looks kinda-", "surprise_frown", "susie")
+            end
             cutscene:showNametag("Brenda")
             cutscene:text("* Excuse me,[wait:5] have you heard of any rumors regarding this forest?", "smile", "brenda_lw")
             cutscene:text("* I'm currently investigating claims of a...", "smile_b", "brenda_lw")
@@ -188,6 +202,11 @@ return {
                     cutscene:text("* Yeah,[wait:5] not that I'm proud of killing or anything...", "worried", "jamm")
                     cutscene:text("* But what matters is that we're safe,[wait:5] right?", "worried", "jamm")
                 end
+                if ceroba then
+                    cutscene:showNametag("Ceroba")
+                    cutscene:text("* I have to admit,[wait:5] I do feel bad for killing them.", "dissapproving", "ceroba")
+                    cutscene:text("* But...[wait:5] You were in danger.[wait:5] So we had to do something.", "closed_eyes", "ceroba")
+                end
                 cutscene:showNametag("Brenda")
                 cutscene:text("* [speed:0.4]...", "down", "brenda_lw")
                 cutscene:text("* (Damnit...[wait:10] she's right...)", "down", "brenda_lw")
@@ -206,6 +225,10 @@ return {
                     cutscene:showNametag("Jamm")
                     cutscene:text("* ...", "shaded_neutral", "jamm")
                 end
+                if ceroba then
+                    cutscene:showNametag("Ceroba")
+                    cutscene:text("* ...", "dissapproving", "ceroba")
+                end
                 Assets.playSound("ominous", 1, 1)
                 Game:setFlag("evershade_froggitkill", true)
             else
@@ -220,6 +243,10 @@ return {
                     cutscene:showNametag("Susie")
                 end
                 cutscene:text("* Geez,[wait:5] monsters aren't usually agressive like that.", "nervous", "susie")
+                if ceroba then
+                    cutscene:showNametag("Ceroba")
+                    cutscene:text("* Can confirm.[wait:5] Especially not Froggits.", "closed_eyes", "ceroba")
+                end
                 cutscene:showNametag("Brenda")
                 cutscene:text("* M-maybe I startled them?", "down", "brenda_lw")
                 cutscene:showNametag("Susie")
