@@ -7,6 +7,7 @@ function FeralFroggit:init()
 
     if Game:getFlag("randomencounter#evershade1:violent") then
         if Game:getFlag("randomencounter#evershade1:violent") >= 16 then
+            self.text = "* You corner the Feral Froggits."
             local enemies_left = 22 - Game:getFlag("randomencounter#evershade1:violent")
             local mus_pitch
             if enemies_left <= 0 then

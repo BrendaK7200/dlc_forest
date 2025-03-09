@@ -12,7 +12,15 @@ function FeralFroggit:init()
     self.defense = 1
     self.money = 5
     self.experience = 10
-    
+
+    if Game:getFlag("randomencounter#evershade1:violent") and Game:getFlag("randomencounter#evershade1:violent") >= 16 then
+        self.scared = true
+    end
+    if self.scared then
+        self.money = 0
+        self.mercy = 100
+    end
+
     self.dialogue_bubble = "ut_small"
     self.dialogue_offset = {10, 0}
 
@@ -24,10 +32,18 @@ function FeralFroggit:init()
     self.dialogue = {
         "*Croak*[wait:5] *Croak*",
     }
+    if self.scared then
+        self.dialogue = {
+            "*Shiver*[wait:5] *Shiver*",
+        }
+    end
 
     self.low_health_dialogue = "*Croak...*"
 
     self.check = "ATK 5 DEF 1\n* A Froggit with the mental capacity of a wild animal."
+    if self.scared then
+        self.check = "ATK 5 DEF 1\n* Cornered like a wild animal."
+    end
 
     self.text = {
         "* Feral Froggit sniffs the air for your scent.",
@@ -36,13 +52,18 @@ function FeralFroggit:init()
     }
 
     self.spareable_text = "* Feral Froggit respects your authority."
+    if self.scared then
+        self.spareable_text = "* Feral Froggit tries to run away."
+    end
     self.low_health_text = "* Feral Froggit starts to get skiddish."
 
-    self:registerAct("Compliment")
-    self:registerAct("Flirt")
-    self:registerAct("Threaten")
-    self:registerAct("X-Threaten", nil, "susie")
-    self:registerMarcyAct("Jump")
+    if not self.scared then
+        self:registerAct("Compliment")
+        self:registerAct("Flirt")
+        self:registerAct("Threaten")
+        self:registerAct("X-Threaten", nil, "susie")
+        self:registerMarcyAct("Jump")
+    end
 
     self.damage_offset = {0, -60}
 
@@ -55,6 +76,11 @@ end
 
 function FeralFroggit:getDamageVoice()
     return "ehurt1"
+end
+
+function FeralFroggit:onDefeat()
+    self.money = 5
+    super.onDefeat(self)
 end
 
 function FeralFroggit:onHurtEnd()
@@ -102,6 +128,9 @@ function FeralFroggit:onAct(battler, name)
             "* The Feral Froggit" .. ((froggits > 1) and "s" or "") .. " couldn't keep up!\n* They became [color:blue]TIRED[color:white]!"
         }
     elseif name == "Standard" then
+        if self.scared then
+            return "* ... But "..battler.chara:getName().." had no idea what to do."
+        end
         if battler.chara.id == "susie" then
             self:addMercy(50)
             return {
