@@ -6,7 +6,9 @@ function Encounters:init()
     self.population = 22
     self.encounters = {
         "2feralfroggit",
-        "3feralfroggit"
+        "3feralfroggit",
+        "whimsorrow",
+        "feralfroggitwhimsorrow"
     }
 end
 
