@@ -4,7 +4,7 @@ function BearserkerShadowed:init()
     super:init(self)
 
     self.name = "???"
-    self:setActor("bearserkershadowed")
+    self:setActor("bearserkerenemyshadowed")
 
     self.max_health = 1500
     self.health = 1500
@@ -32,8 +32,11 @@ function BearserkerShadowed:init()
     self.damage_offset = {40, 0}
 
     self.timer = 0
-    local body = self.sprite.parts.main.sprite
-    body:setScale(0.7)
+    local body = self.sprite.parts.body.sprite
+    local hand_left = self.sprite.parts.hand_left.sprite
+    local hand_right = self.sprite.parts.hand_right.sprite
+    hand_left.layer = body.layer + 1
+    hand_right.layer = body.layer + 1
 end
 
 function BearserkerShadowed:onAct(battler, name)
@@ -47,9 +50,11 @@ end
 function BearserkerShadowed:update()
     super:update(self)
 
-    local body = self.sprite.parts.main.sprite
+    local body = self.sprite.parts.body.sprite
+    local hand_left = self.sprite.parts.hand_left.sprite
+    local hand_right = self.sprite.parts.hand_right.sprite
     self.timer = self.timer + DT
-    body.scale_y = math.sin(self.timer/2)/75 + 0.7
+    body.scale_y = math.sin(self.timer)/50 + 1
 end
 
 return BearserkerShadowed
