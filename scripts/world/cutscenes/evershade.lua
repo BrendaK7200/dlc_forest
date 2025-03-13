@@ -46,7 +46,7 @@ return {
             cutscene:text("* step aside,[wait:5] i'll handle this", "calm_b", "dess")
             cutscene:text("* I AM THE ANGRY PUMPKIN!!!", "angry", "dess")
             cutscene:hideNametag()
-            local encounter = cutscene:startLightEncounter("feralfroggit", true)
+            local encounter = cutscene:startLightEncounter("feralfroggit_scripted", true)
             froggit:remove()
     
             local defeated_enemies = encounter:getDefeatedEnemies()

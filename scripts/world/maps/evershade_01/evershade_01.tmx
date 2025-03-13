@@ -68,7 +68,11 @@
   <object id="7" x="320" y="360" width="120" height="120"/>
  </objectgroup>
  <objectgroup id="7" name="objects">
-  <object id="8" name="chest" x="360" y="320" width="40" height="40"/>
+  <object id="8" name="chest" x="360" y="320" width="40" height="40">
+   <properties>
+    <property name="item" value="consumables/shadefruit"/>
+   </properties>
+  </object>
   <object id="10" name="savepoint" x="380" y="470">
    <properties>
     <property name="text1" value="* (For some reason,[wait:5] the sunlight suddenly struggles to get through the leaves.)"/>
@@ -82,7 +86,12 @@
     <property name="marker" value="north"/>
    </properties>
   </object>
-  <object id="12" name="transition" x="280" y="-40" width="200" height="40"/>
+  <object id="12" name="transition" x="280" y="-40" width="200" height="40">
+   <properties>
+    <property name="map" value="evershade_02"/>
+    <property name="marker" value="south"/>
+   </properties>
+  </object>
   <object id="16" name="encounterzone" x="0" y="0" width="760" height="800">
    <properties>
     <property name="encgroup" value="evershade1"/>

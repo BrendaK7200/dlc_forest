@@ -237,7 +237,9 @@ return {
           height = 40,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["item"] = "consumables/shadefruit"
+          }
         },
         {
           id = 10,
@@ -282,7 +284,10 @@ return {
           height = 40,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["map"] = "evershade_02",
+            ["marker"] = "south"
+          }
         },
         {
           id = 16,
