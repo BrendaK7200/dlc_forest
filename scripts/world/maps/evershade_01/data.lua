@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 9,
-  nextobjectid = 17,
+  nextobjectid = 18,
   properties = {
     ["border"] = "evershade",
     ["light"] = true,
@@ -253,6 +253,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
+            ["flagcheck"] = "!evershade_geno",
             ["text1"] = "* (For some reason,[wait:5] the sunlight suddenly struggles to get through the leaves.)",
             ["text2"] = "* (The power of sunlight is shining much less inside you now.)"
           }
@@ -302,6 +303,23 @@ return {
           visible = true,
           properties = {
             ["encgroup"] = "evershade1"
+          }
+        },
+        {
+          id = 17,
+          name = "savepoint",
+          type = "",
+          shape = "point",
+          x = 380,
+          y = 470,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["flagcheck"] = "evershade_geno",
+            ["text1"] = "* (The silence of the forest is deafening.)",
+            ["text2"] = "* (You are filled with power.)"
           }
         }
       }
