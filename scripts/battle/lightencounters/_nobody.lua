@@ -3,8 +3,16 @@ local encounter, super = Class(LightEncounter)
 function encounter:init()
     super.init(self)
 
-    -- Text displayed at the bottom of the screen at the start of the encounter
-    self.text = "[font:main_mono,15]* But nobody came."
+    local rnd = love.math.random(1, 20)
+    if rnd == 1 then -- maybe could use more unique messages?
+        self.text = "[font:main_mono,15]* Nothing but silence."
+    elseif rnd == 2 then
+        self.text = "[font:main_mono,15]* Alone."
+    elseif rnd == 3 then
+        self.text = "[font:main_mono,15]* You're seeing things.[wait:5] Keep going."
+    else
+        self.text = "[font:main_mono,15]* But nobody came."
+    end
 
     self.music = nil
 end
