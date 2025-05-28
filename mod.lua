@@ -7,7 +7,7 @@ function Mod:onMapMusic(map, music)
         if Game:getFlag("evershade_geno") then
             return "evershade_empty"
         else
-            return "evershade_forst"
+            return "evershade_forest"
         end
     end
 end
