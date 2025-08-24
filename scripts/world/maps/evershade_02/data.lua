@@ -1,7 +1,7 @@
 return {
   version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.11.0",
+  tiledversion = "1.11.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 9,
-  nextobjectid = 16,
+  nextobjectid = 20,
   properties = {
     ["border"] = "evershade",
     ["light"] = true,
@@ -280,6 +280,21 @@ return {
           visible = true,
           properties = {
             ["encgroup"] = "evershade1"
+          }
+        },
+        {
+          id = 17,
+          name = "chest",
+          type = "",
+          shape = "rectangle",
+          x = 200,
+          y = 720,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["item"] = "consumables/shadefruit"
           }
         }
       }

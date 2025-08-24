@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="25" height="20" tilewidth="40" tileheight="40" infinite="0" nextlayerid="9" nextobjectid="16">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="25" height="20" tilewidth="40" tileheight="40" infinite="0" nextlayerid="9" nextobjectid="20">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -78,6 +78,11 @@
   <object id="12" name="encounterzone" x="0" y="0" width="1000" height="800">
    <properties>
     <property name="encgroup" value="evershade1"/>
+   </properties>
+  </object>
+  <object id="17" name="chest" x="200" y="720" width="40" height="40">
+   <properties>
+    <property name="item" value="consumables/shadefruit"/>
    </properties>
   </object>
  </objectgroup>
