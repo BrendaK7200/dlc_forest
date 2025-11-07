@@ -1,7 +1,7 @@
 local BearserkerShadowed, super = Class(LightEncounter)
 
 function BearserkerShadowed:init()
-    super:init(self)
+    super.init(self)
 
     self.text = "* Nowhere to hide."
 

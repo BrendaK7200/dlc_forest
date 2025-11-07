@@ -1,7 +1,7 @@
 local FeralFroggit, super = Class(LightEncounter)
 
 function FeralFroggit:init()
-    super:init(self)
+    super.init(self)
 
     self.text = "* A trio of frogs attack you!"
 

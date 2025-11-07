@@ -1,7 +1,7 @@
 local FeralFroggit_Whimsorrow, super = Class(LightEncounter)
 
 function FeralFroggit_Whimsorrow:init()
-    super:init(self)
+    super.init(self)
 
     self.text = "* Feral Froggit and Whimsorrow stop fighting each other just to fight you."
 

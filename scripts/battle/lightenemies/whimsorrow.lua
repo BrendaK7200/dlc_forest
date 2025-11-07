@@ -1,7 +1,7 @@
 local Whimsorrow, super = Class(LightEnemyBattler)
 
 function Whimsorrow:init()
-    super:init(self)
+    super.init(self)
 
     self.name = "Whimsorrow"
     self:setActor("whimsorrowenemy")
@@ -78,7 +78,7 @@ function Whimsorrow:onDefeat()
 end
 
 function Whimsorrow:onHurtEnd()
-    super:onHurtEnd(self)
+    super.onHurtEnd(self)
     local body = self.sprite.parts.body.sprite
     local wings = self.sprite.parts.wings.sprite
     wings.layer = body.layer - 1
@@ -92,11 +92,11 @@ function Whimsorrow:onAct(battler, name)
         return "* ... But "..battler.chara:getName().." had no idea what to do."
     end
 
-    return super:onAct(self, battler, name)
+    return super.onAct(self, battler, name)
 end
 
 function Whimsorrow:update()
-    super:update(self)
+    super.update(self)
 
     local body = self.sprite.parts.body.sprite
     local wings = self.sprite.parts.wings.sprite

@@ -1,7 +1,7 @@
 local Whimsorrow, super = Class(LightEncounter)
 
 function Whimsorrow:init()
-    super:init(self)
+    super.init(self)
 
     self.text = "* Whimsorrow jumps out at you!"
 

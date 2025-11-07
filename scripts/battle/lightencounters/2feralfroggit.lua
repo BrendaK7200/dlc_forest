@@ -1,7 +1,7 @@
 local FeralFroggit, super = Class(LightEncounter)
 
 function FeralFroggit:init()
-    super:init(self)
+    super.init(self)
 
     self.text = "* Feral Froggits block the way!"
 

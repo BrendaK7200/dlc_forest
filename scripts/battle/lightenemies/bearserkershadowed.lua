@@ -1,7 +1,7 @@
 local BearserkerShadowed, super = Class(LightEnemyBattler)
 
 function BearserkerShadowed:init()
-    super:init(self)
+    super.init(self)
 
     self.name = "???"
     self:setActor("bearserkerenemyshadowed")
@@ -44,11 +44,11 @@ function BearserkerShadowed:onAct(battler, name)
         return "* ... But "..battler.chara:getName().." had no idea what to do."
     end
 
-    return super:onAct(self, battler, name)
+    return super.onAct(self, battler, name)
 end
 
 function BearserkerShadowed:update()
-    super:update(self)
+    super.update(self)
 
     local body = self.sprite.parts.body.sprite
     local hand_left = self.sprite.parts.hand_left.sprite

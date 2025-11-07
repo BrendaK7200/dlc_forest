@@ -1,7 +1,7 @@
 local FeralFroggit, super = Class(LightEnemyBattler)
 
 function FeralFroggit:init()
-    super:init(self)
+    super.init(self)
 
     self.name = "Feral Froggit"
     self:setActor("feralfroggitenemy")
@@ -84,7 +84,7 @@ function FeralFroggit:onDefeat()
 end
 
 function FeralFroggit:onHurtEnd()
-    super:onHurtEnd(self)
+    super.onHurtEnd(self)
     local body = self.sprite.parts.body.sprite
     local head = self.sprite.parts.head.sprite
     head.layer = body.layer + 1
@@ -163,11 +163,11 @@ function FeralFroggit:onAct(battler, name)
         return "* ... But "..battler.chara:getName().." had no idea what to do."
     end
 
-    return super:onAct(self, battler, name)
+    return super.onAct(self, battler, name)
 end
 
 function FeralFroggit:update()
-    super:update(self)
+    super.update(self)
 
     local body = self.sprite.parts.body.sprite
     local head = self.sprite.parts.head.sprite
