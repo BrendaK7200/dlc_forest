@@ -163,7 +163,7 @@ return {
             froggit:setAnimation("croak")
             Assets.playSound("croak", 1, 0.7)
             cutscene:wait(1)
-            if jamm and not Game:getFlag("dungeonkiller") then
+            if jamm then
                 cutscene:showNametag("Jamm")
                 cutscene:text("* Uh...[wait:10]\n* Brenda?", "worried", "jamm")
             end
@@ -197,7 +197,7 @@ return {
                 cutscene:showNametag("Susie")
                 cutscene:text("* Hey,[wait:5] they were gonna attack you,[wait:5] we were just defending you.", "annoyed", "susie")
                 cutscene:text("* I dunno why they didn't try to run away though...", "annoyed_down", "susie")
-                if jamm and not Game:getFlag("dungeonkiller") then
+                if jamm then
                     cutscene:showNametag("Jamm")
                     cutscene:text("* Yeah,[wait:5] not that I'm proud of killing or anything...", "worried", "jamm")
                     cutscene:text("* But what matters is that we're safe,[wait:5] right?", "worried", "jamm")
@@ -237,7 +237,7 @@ return {
                 cutscene:text("* U-um,[wait:5] thanks guys.", "neutral", "brenda_lw")
                 cutscene:showNametag("Susie")
                 cutscene:text("* No problem!", "smile", "susie")
-                if jamm and not Game:getFlag("dungeonkiller") then
+                if jamm then
                     cutscene:showNametag("Jamm")
                     cutscene:text("* Yeah,[wait:5] that was a piece of cake!", "smug", "jamm")
                     cutscene:showNametag("Susie")
@@ -253,7 +253,7 @@ return {
                 cutscene:text("* Maybe...", "annoyed_down", "susie")
                 cutscene:text("* Well,[wait:5] in any case,[wait:5] we should probably keep our guards up.", "annoyed", "susie")
                 cutscene:text("* Just in case more of those guys try to attack us.", "nervous_side", "susie")
-                if jamm and not Game:getFlag("dungeonkiller") then
+                if jamm then
                     cutscene:showNametag("Jamm")
                     cutscene:text("* Couldn't agree more.[wait:10] We can't be too careful.", "worried", "jamm")
                 end
